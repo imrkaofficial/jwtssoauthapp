@@ -2,27 +2,16 @@ package main
 
 import (
 	"fmt"
-	"log"
-	// "net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/imrkaofficial/jwtssoauthapp/handlers"
-	"github.com/imrkaofficial/jwtssoauthapp/models"
-	"gorm.io/gorm"
-	"gorm.io/driver/mysql"
+	"github.com/imrkaofficial/jwtssoauthapp/config"
 )
 
 func main() {
 	// Connect to MySQL database
-	dsn := "user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	if err != nil {
-		log.Fatalf("Error connecting to database: %v", err)
-	}
-
-
-	// Auto Migrate the models
-	db.AutoMigrate(&models.User{})
+	dsn := "admin:jwtsso!!1234@tcp(localhost:3306)/jwtssodb?charset=utf8mb4&parseTime=True&loc=Local"
+	config.Connect(dsn) // Initialize and connect to the database
 
 	router := gin.Default()
 
@@ -31,12 +20,6 @@ func main() {
 
 	// Serve static files
 	router.Static("/static", "./static")
-
-	// Pass the DB instance to handlers
-	router.Use(func(c *gin.Context) {
-		c.Set("db", db)
-		c.Next()
-	})
 
 	// Routes
 	router.GET("/login", handlers.ShowLoginPage)
@@ -47,6 +30,6 @@ func main() {
 	router.POST("/forgotpwd", handlers.ForgotPassword)
 	router.POST("/reset-password", handlers.ResetPassword)
 
-	fmt.Println("Server running on localhost:8080")
-	router.Run(":8080")
+	fmt.Println("Server running on localhost:9000")
+	router.Run(":9000")
 }
