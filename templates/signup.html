@@ -1,19 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Signup</title>
+    <title>Create your User Account</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
-    <h1>Signup</h1>
+    <!-- <h1>Create a User Account</h1>
     <form action="/signup" method="post">
+        <label for="firstname">Firstname:</label><br>
+        <input type="text" id="firstname" name="firstname"><br>
+        <label for="lastname">Lastname:</label><br>
+        <input type="text" id="lastname" name="lastname"><br>
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username"><br>
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email"><br>
         <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
+        <input type="password" id="password" name="password"><br>
+        <label for="confirmpassword">Confirm Password:</label><br>
+        <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
         <input type="submit" value="Signup">
-    </form>
+    </form> -->
+    <!-- user Signup Form -->
+    <section id="user" class="user sections-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gx-lg-0 gy-4">
+                <div class="col-lg-4">
+                    <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                        <div class="info-item d-flex">
+                            <div>
+                                <h3>Create a User Account</h3>
+                                <p>to continue</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <form id="signup_form" aria-labelledby="nextgen-label" class="signup-form" action="/signup" method="post">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" id="firstname" name="firstname" class="form-control"
+                                    placeholder="Firstname*" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" id="lastname" name="lastname" class="form-control"
+                                    placeholder="Lastname*" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" id="username" name="username" class="form-control"
+                                    placeholder="Username*" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="email" id="email" name="email" class="form-control"
+                                    placeholder="Email address*" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="password" id="password" name="password" class="form-control"
+                                    placeholder="Password*" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="password" id="confpwd" name="confpwd" class="form-control"
+                                    placeholder="Confirm Password*" required>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-end">
+                                <a href="/login" class="button-started">Signin</a>
+                                <button type="submit" value="Signup">Submit</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End user Signup Form -->
 </body>
 </html>

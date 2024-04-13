@@ -2,14 +2,49 @@
 <html>
 <head>
     <title>Forgot Password</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
-    <h1>Forgot Password</h1>
-    <form action="/forgotpwd" method="post">
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
-        <input type="submit" value="Submit">
-    </form>
+    <!-- user Forgot password Form -->
+    <section id="user" class="user sections-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gx-lg-0 gy-4">
+                <div class="col-lg-4">
+                    <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                        <div class="info-item d-flex">
+                            <div>
+                                <h3>Forgot Password</h3>
+                                <p>to continue</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <form id="forgotpwd_form" aria-labelledby="nextgen-label" class="forgotpwd-form" action="/forgotpwd" method="post">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <input type="text" id="username" name="username" class="form-control"
+                                    placeholder="Email*" required>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-end">
+                                <a href="/login" class="button-started">Signin</a>
+                                <button type="submit" value="Submit">Submit</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End user Forgot password Form -->
 </body>
 </html>

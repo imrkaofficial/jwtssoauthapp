@@ -1,17 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Login</title>
+    <title>Signin into your account</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
+
 <body>
-    <h1>Login</h1>
-    <form action="/login" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Login">
-    </form>
+    <!-- user login Form -->
+    <section id="user" class="user sections-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gx-lg-0 gy-4">
+                <div class="col-lg-4">
+                    <div class="info-container d-flex flex-column align-items-center justify-content-center">
+                        <div class="info-item d-flex">
+                            <div>
+                                <h3>Sign in</h3>
+                                <p>to continue</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <form id="signin_form" aria-labelledby="nextgen-label" class="signin-form" action="/login" method="post">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" id="username" name="username" class="form-control"
+                                    placeholder="Username/Email*" required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="password" id="password" name="password" class="form-control"
+                                    placeholder="Password*" required>
+                                <a href="/forgotpwd">Forgot password?</a>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-end">
+                                <a href="/signup" class="button-started">Create account</a>
+                                <button type="submit" value="Submit">Submit</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End user login Form -->
 </body>
+
 </html>
