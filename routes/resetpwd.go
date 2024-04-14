@@ -5,6 +5,9 @@ import (
 	"github.com/imrkaofficial/jwtssoauthapp/handlers"
 )
 
-func RegisterResetPasswordRoutes(router *gin.RouterGroup) {
-	router.POST("/reset-password", handlers.ResetPassword)
+func SetupResetPasswordRoutes(router *gin.Engine) {
+	ResetPassword := router.Group("/reset-password")
+	{
+		ResetPassword.POST("/", handlers.ResetPassword)
+	}
 }

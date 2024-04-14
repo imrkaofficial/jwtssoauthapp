@@ -5,7 +5,10 @@ import (
 	"github.com/imrkaofficial/jwtssoauthapp/handlers"
 )
 
-func RegisterLoginRoutes(router *gin.RouterGroup) {
-	router.GET("/login", handlers.ShowLoginPage)
-	router.POST("/login", handlers.Login)
+func SetupLoginRoutes(router *gin.Engine) {
+	login := router.Group("/login")
+	{
+		login.GET("/", handlers.ShowLoginPage)
+		login.POST("/", handlers.Login)
+	}
 }

@@ -22,10 +22,10 @@ func main() {
 	router.Static("/static", "./static")
 
 	// Routes
-	routes.RegisterLoginRoutes(router.Group("/login"))
-	routes.RegisterSignupRoutes(router.Group("/signup"))
-	routes.RegisterForgotPasswordRoutes(router.Group("/forgotpwd"))
-	routes.RegisterResetPasswordRoutes(router.Group("/reset-password"))
+	routes.SetupLoginRoutes(router)
+	routes.SetupSignupRoutes(router)
+	routes.SetupForgotPasswordRoutes(router)
+	routes.SetupResetPasswordRoutes(router)
 
 	fmt.Println("Server running on localhost:9000")
 	router.Run(":9000")

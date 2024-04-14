@@ -5,7 +5,10 @@ import (
 	"github.com/imrkaofficial/jwtssoauthapp/handlers"
 )
 
-func RegisterForgotPasswordRoutes(router *gin.RouterGroup) {
-	router.GET("/forgotpwd", handlers.ShowForgotPasswordPage)
-	router.POST("/forgotpwd", handlers.ForgotPassword)
+func SetupForgotPasswordRoutes(router *gin.Engine) {
+	ForgotPassword := router.Group("/forgotpwd")
+	{
+		ForgotPassword.GET("/", handlers.ShowForgotPasswordPage)
+		ForgotPassword.POST("/", handlers.ForgotPassword)
+	}
 }
