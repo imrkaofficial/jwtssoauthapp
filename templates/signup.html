@@ -1,30 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Create your User Account</title>
-    
+
     <!-- CSS Files -->
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
+
 <body>
-    <!-- <h1>Create a User Account</h1>
-    <form action="/signup" method="post">
-        <label for="firstname">Firstname:</label><br>
-        <input type="text" id="firstname" name="firstname"><br>
-        <label for="lastname">Lastname:</label><br>
-        <input type="text" id="lastname" name="lastname"><br>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br>
-        <label for="confirmpassword">Confirm Password:</label><br>
-        <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
-        <input type="submit" value="Signup">
-    </form> -->
-    <!-- user Signup Form -->
     <section id="user" class="user sections-bg">
         <div class="container" data-aos="fade-up">
 
@@ -41,7 +26,8 @@
                 </div>
 
                 <div class="col-lg-8">
-                    <form id="signup_form" aria-labelledby="nextgen-label" class="signup-form" action="/signup" method="post">
+                    <form id="signup_form" aria-labelledby="nextgen-label" class="signup-form" action="/signup"
+                        method="post">
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <input type="text" id="firstname" name="firstname" class="form-control"
@@ -69,8 +55,8 @@
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                                <div class="error-message">{{.Error}}</div>
+                                <div class="sent-message">{{.Success}}</div>
                             </div>
                             <div class="text-end">
                                 <a href="/login" class="button-started">Signin</a>
@@ -83,4 +69,5 @@
     </section>
     <!-- End user Signup Form -->
 </body>
+
 </html>
